@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: n8n-veterinaria
+    env: docker
+    plan: free
+    region: frankfurt # O la más cercana a ti
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: N8N_SECURE_COOKIE
+        value: false
+      - key: PORT
+        value: 5678
+      - key: WEBHOOK_URL
+        value: https://n8n-veterinaria.onrender.com/ # Cambia 'n8n-veterinaria' por el nombre que elijas
